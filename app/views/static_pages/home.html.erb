@@ -5,3 +5,8 @@
   <%= raw t(".content", ref1: link_to(t(".link1"),
     "http://www.railstutorial.org/")) %>
 </p>
+<%= link_to t(".link2"), "#", class: "btn btn-lg btn-primary" %>
+<%= link_to image_tag("rails.png", alt: t(".textlogo")),
+  "http://rubyonrails.org/" %>
+<%= link_to image_tag("kitten.jpg"), "#" %>
+<%= link_to t(".linksignup"), signup_path, class: "btn btn-lg btn-primary" %>
