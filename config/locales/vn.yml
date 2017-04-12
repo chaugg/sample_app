@@ -1,0 +1,18 @@
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+vn:
+  hello: "xin chào"
+  base_title: "Ruby on Rails Tutorial Sample App"
+  index: "Chào mừng đến trang web!"
+  static_pages:
+    home:
+      welcome: "chào mừng bạn đến với trang chủ!"
+      title: "Trang chủ"
+      content: "chào mừng bạn đến với trang Home %{ref1}"
+      link1: "Rails 5"
+    help:
+      welcome: "chào mừng bạn đến với trang trợ giúp!"
+      title: "Trang trợ giúp"
+    about:
+      content: "chào mừng bạn đến với trang về chúng tôi %{ref1}"
+      link1: "Trang giới thiệu"
