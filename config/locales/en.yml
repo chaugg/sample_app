@@ -4,14 +4,18 @@ en:
   hello: "hello"
   base_title: "Ruby on Rails Tutorial Sample App"
   index: "Welcome"
-  title: "Ruby on Rails Tutorial Sample App"
-  app: "Sample app"
+  home: "Home"
+  help: "Help"
+  about: "About"
   static_pages:
     home:
       welcome: "Welcome to homepage!"
       title: "Home"
       content: "welcome to Home %{ref1}"
       link1: "Rails 5"
+      link2: "Login"
+      linksignup: "Sign up"
+      textlogo: "Logo Rails"
     help:
       welcome: "Welcome to help page"
       title: "Help"
@@ -19,3 +23,10 @@ en:
       content: "The %{ref1} "
       link1: "Ruby on Rails"
       title: "About"
+    contact:
+      title: "Contact"
+  users:
+    new:
+      title: "Signup"
+      welcome: "Created with ruby on rails"
+      content: "Welcome to user signup page"
