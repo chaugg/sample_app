@@ -4,11 +4,18 @@ en:
   hello: "hello"
   base_title: "Ruby on Rails Tutorial Sample App"
   index: "Welcome"
+  title: "Ruby on Rails Tutorial Sample App"
+  app: "Sample app"
   static_pages:
     home:
       welcome: "Welcome to homepage!"
+      title: "Home"
+      content: "welcome to Home %{ref1}"
+      link1: "Rails 5"
     help:
       welcome: "Welcome to help page"
+      title: "Help"
     about:
       content: "The %{ref1} "
       link1: "Ruby on Rails"
+      title: "About"
