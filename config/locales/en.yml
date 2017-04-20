@@ -7,6 +7,9 @@ en:
   home: "Home"
   help: "Help"
   about: "About"
+  error: "errors"
+  notfound: "Can not find user!"
+  flash: "Welcome to Ruby app"
   static_pages:
     home:
       welcome: "Welcome to homepage!"
@@ -30,3 +33,5 @@ en:
       title: "Signup"
       welcome: "Created with ruby on rails"
       content: "Welcome to user signup page"
+      confirm: "Confirm"
+      creat: "Creat account"
