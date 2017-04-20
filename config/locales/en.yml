@@ -16,9 +16,12 @@ en:
       title: "Home"
       content: "welcome to Home %{ref1}"
       link1: "Rails 5"
-      link2: "Login"
+      login: "Login"
       linksignup: "Sign up"
       textlogo: "Logo Rails"
+      setting: "Setting"
+      account: "Account"
+      logout: "Logout"
     help:
       welcome: "Welcome to help page"
       title: "Help"
@@ -35,3 +38,14 @@ en:
       content: "Welcome to user signup page"
       confirm: "Confirm"
       creat: "Creat account"
+      login: "Login"
+      account: "Account"
+  sessions:
+    new:
+      title: "Login page"
+      login: "Login"
+      signup: "Sign up"
+      newuser: "New user "
+      setting: "Setting"
+      logout: "Logout"
+      account: "Account"
