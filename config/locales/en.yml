@@ -40,6 +40,17 @@ en:
       creat: "Creat account"
       login: "Login"
       account: "Account"
+    edit:
+      please_log_in: "Please login"
+      title: "Update profile"
+      change: "Change"
+      save: "Save"
+    index:
+      users: "Users"
+    user:
+      sure: "Are you sure?"
+      delete_success: "Succees"
+      error: "Error"
   sessions:
     new:
       title: "Login page"
@@ -50,3 +61,6 @@ en:
       setting: "Setting"
       logout: "Logout"
       account: "Account"
+    form:
+      change: "Change"
+      confirm: "Confirm"
