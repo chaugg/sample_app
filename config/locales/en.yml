@@ -44,6 +44,7 @@ en:
     new:
       title: "Login page"
       login: "Login"
+      rememberme: "Remember me"
       signup: "Sign up"
       newuser: "New user "
       setting: "Setting"
