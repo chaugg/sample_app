@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, except: [:new, :create, :show]
+  before_action :find_user, except: [:index, :new, :create]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: :destroy
+
+  def index
+    @users = User.paginate page: params[:page]
+  end
 
   def new
     @user = User.new
@@ -8,23 +16,63 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       log_in @user
-      flash[:success] = t "flash"
-      redirect_to @user
+      flash[:success] = t "success_user"
+      redirect_to user_path @user
     else
       render :new
     end
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "success"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "delete_success"
+      redirect_to users_path
+    else
+      flash[:warning] = t "error"
+      redirect_to root_path
+    end
+  end
+
+  def correct_user
+    redirect_to root_path unless @user.current_user? current_user
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "check_login"
+      redirect_to login_url
+    end
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
+  end
+
+  def find_user
     @user = User.find_by id: params[:id]
     unless @user
-      flash[:error] = t "notfound"
+      flash[:danger] = t "notfound_user"
       redirect_to root_path
     end
   end
 
   private
-
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
