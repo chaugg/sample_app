@@ -1,5 +1,4 @@
 module SessionsHelper
-
   def log_in user
     session[:user_id] = user.id
   end
@@ -10,12 +9,18 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  def forget user
+    user.forget
+    cookies.delete :user_id
+    cookies.delete :remember_token
+  end
+
   def current_user
     if user_id = session[:user_id]
-      @current_user ||= User.find_by id: user_id
+      @current_user ||= User.find_by id: session[:user_id]
     elsif user_id = cookies.signed[:user_id]
       user = User.find_by id: user_id
-      if user && user.authenticated?(cookies[:remember_token])
+      if user && user.authenticated?(:remember, cookies[:remember_token])
         log_in user
         @current_user = user
       end
@@ -26,10 +31,13 @@ module SessionsHelper
     current_user.present?
   end
 
-  def forget user
-    user.forget
-    cookies.delete :user_id
-    cookies.delete :remember_token
+  def store_location
+    session[:fowarding_url] = request.original_url if request.get?
+  end
+
+  def redirect_back_or default
+    redirect_to session[:fowarding_url] || default
+    session.delete :fowarding_url
   end
 
   def log_out
@@ -38,12 +46,4 @@ module SessionsHelper
     @current_user = nil
   end
 
-  def redirect_back_or default
-    redirect_to session[:forwarding_url] || default
-    session.delete :forwarding_url
-  end
-
-  def store_location
-    session[:forwarding_url] = request.original_url if request.get?
-  end
 end
