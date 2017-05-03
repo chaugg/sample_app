@@ -64,3 +64,13 @@ en:
     form:
       change: "Change"
       confirm: "Confirm"
+  password_resets:
+    new:
+      submit: "Submit"
+      title: "Reset your pass"
+    create:
+      mail_not_found: "Can not find your email!"
+      sent: "Please check your email!"
+  user_mailer:
+    password_reset:
+      expire_time: "The link last in two hours!"
