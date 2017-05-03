@@ -9,6 +9,7 @@ class User < ApplicationRecord
   validates :password, length: {minimum: 6}, allow_nil: true
 
   has_secure_password
+  has_many :microposts, dependent: :destroy
 
   before_save :email_downcase
   before_create :create_activation_digest
