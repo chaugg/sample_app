@@ -15,7 +15,7 @@ en:
       welcome: "Welcome to homepage!"
       title: "Home"
       content: "welcome to Home %{ref1}"
-      link1: "Rails 5"
+      link_rails: "Rails 5"
       login: "Login"
       linksignup: "Sign up"
       textlogo: "Logo Rails"

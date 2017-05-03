@@ -73,6 +73,10 @@ class User < ApplicationRecord
     end
   end
 
+  def feed
+    microposts.recent
+  end
+
   private
   def create_activation_digest
     self.activation_token = User.new_token
