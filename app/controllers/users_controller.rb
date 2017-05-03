@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to root_url and return unless @user
+    @microposts = @user.microposts.paginate page: params[:page]
   end
 
   def edit
@@ -42,14 +44,6 @@ class UsersController < ApplicationController
     @user.destroy
     flash[:success] = t "deleted_user"
     redirect_to users_path
-  end
-
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:error] = t "pls_log_in"
-      redirect_to login_path
-    end
   end
 
   def correct_user
