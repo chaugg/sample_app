@@ -18,5 +18,8 @@
 !/tmp/.keep
 /config/database.yml
 /config/secrets.yml
+/public/uploads
+/puclic/I18n.js
+/public/javascripts/translations.js
 # Ignore Byebug command history file.
 .byebug_history
