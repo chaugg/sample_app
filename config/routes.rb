@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get "password_resets/new"
-
-  get "password_resets/edit"
-
   scope "(:locale)", locale: /vn|en/ do
     root "static_pages#home"
     get "/help", to: "static_pages#help"
@@ -15,8 +11,12 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
   end
 
-  resources :users, except: :new
   resources :account_activations, only: :edit
   resources :password_resets, except: [:index, :show, :destroy]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+  resources :users do
+    resources :followings, only: [:index]
+    resources :followers, only: [:index]
+    end
 end
